@@ -1,0 +1,100 @@
+@import url(https://fonts.google.com/specimen/Red+Hat+Display);
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    height: 100vh;
+    width: 1440;
+    font-family: "Red Hat Display", sans-serif;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.container{
+    display: grid;
+    place-items: center center;
+    position: relative;
+    width: 100%;
+    overflow: auto;
+    height: 100%;
+}
+
+.container::before{
+    content: "";
+    background-image: url(pattern-background-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    background-position: center bottom 230px;
+    background-color: rgba(52, 142, 240, 0.38);
+}
+.box{
+    width: 24%;
+    height: 75%;
+    position: relative;
+    border-radius: 20px;
+    background-color: white;
+    background-image: url(illustration-hero.svg);
+    background-size:auto 190px;
+    background-repeat: no-repeat;
+    /* display: flex;
+    flex-direction: column; */
+    display: grid;
+    place-content: center center;
+    text-align: center;
+    padding-top: 180px;
+    padding-left: 40px;
+    padding-right: 40px;
+    overflow: hidden;
+}
+
+.box h1{
+    font-family: Poppins,sans-serif;
+    color: #273654;
+    font-size: 23px;
+    /* padding: 10px; */
+    text-align: center;
+    position: relative;
+    /* top: 240px; */
+}
+
+.box p{
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+    /* bottom: 20px;
+    padding-left: 15x;
+    padding-right: 15px; */
+    text-align: center;
+    
+    left: 10px;
+    color: gray;
+    /* top: 230px; */
+}
+
+.box .annual{
+    background-image: url(icon-music.svg);
+    background-repeat: no-repeat;
+    height: 70px;
+    width: 300px;
+    text-align: center;
+    background-color: lightblue;
+    
+}
+
+@media (max-width: 375px) {
+    width: 375px;
+    
+}

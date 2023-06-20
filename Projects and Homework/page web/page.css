@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=FontName&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    font-family: 'Dosis', sans-serif;
+    width: 100%;
+    height: 100%;
+    color: #404142;
+    font-size: 16px;
+    letter-spacing: 0.8px;
+}
+.container{
+
+}
+
+.container .box1 h1{
+    font-weight: 500;
+}
+.box1{
+    position: relative;
+    max-height: 600px;
+    width: 100%;
+    background-color: #016cc7;;
+    padding: 5em;
+    border: 2px solid black;
+}
+.box1 #rocket{
+    vertical-align: middle;
+    position: relative;
+    left: 50%;
+}
+#logo{
+    max-width: 180px;
+}
+.navigation li{
+    vertical-align: left;
+    margin-right: 20px;
+}

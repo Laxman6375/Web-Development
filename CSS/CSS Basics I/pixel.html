@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            background-color: red;
+            width: 500px;
+            height: 100px;
+
+        }
+        #div2{
+            background-color: aqua;
+            width: 10%;
+            height: 10%;
+            margin: 10px;
+
+        }
+        /* vw = view width */
+        #f-para{
+            background-color: aqua;
+            width: 50vw;
+            height: 20vw ;
+        }
+        /* This is a external font */
+        @font-face {
+            font-family: 'Custom';
+            src: url(Brusher-Regular.ttf) format('truetype');
+        }
+        #external{
+            font-family:Custom;
+            font-size: xx-large;
+        }
+        .parent {
+  color: blue;
+
+  .child {
+    color: red;
+    font-style: italic;
+  }
+}
+    </style>
+</head>
+<body>
+    <!-- <div id="div1">
+        <div id="div2"></div>
+    </div> -->
+    <p id="f-para">This is my first para</p>
+    <p id="external">This is a external font</p>
+    <p class="parent">Nested selector</p>
+    <p class="child">Nested selector 22</p>
+</body>
+</html>
