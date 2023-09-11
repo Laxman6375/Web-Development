@@ -3,9 +3,12 @@ import { AppContext } from '../context/AppContext';
 
 const Pageination = () => {
 
-    const { page, handlePageChange, totalPages } = useContext(AppContext);
+    const { page, handlePageChange, totalPages, darkMode } = useContext(AppContext);
   return (
-      <div className=' w-full flex justify-center items-center border-2 fixed bottom-0 bg-white'>
+      <div className={`${
+      darkMode ? 'bg-black text-white border-black shadow-lg shadow-white' : 'bg-white text-black border-white'
+    }  w-full flex justify-center items-center border-2 fixed bottom-0 shadow-lg`}>
+          
           <div className='flex flex-row justify-between w-11/12 max-w-[670px] py-2'>
               <div className=' flex gap-x-2'>
                   { page > 1 &&

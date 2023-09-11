@@ -6,13 +6,15 @@ import { AppContext } from "./context/AppContext";
 import "./App.css"
 
 export default function App() {
-  const { fetchBlogPosts } = useContext(AppContext);
+  const { fetchBlogPosts, darkMode } = useContext(AppContext);
   
   useEffect(() => {
     fetchBlogPosts();
   }, []);
   return (
-    <div className=" w-full h-full flex flex-col gap-y-1 justify-center items-center ">
+    <div className={`${
+      darkMode ? 'bg-black text-white' : 'bg-white text-black'
+    } w-full h-full flex flex-col gap-y-1 justify-center items-center`}>
       <Header />
       <Blogs />
       <Pageination/>

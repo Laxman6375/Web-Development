@@ -1,6 +1,8 @@
 import { createContext, useState } from "react";
 import { baseUrl } from "../baseUrl";
 
+
+
 //step1
 export const AppContext = createContext();
 
@@ -9,17 +11,18 @@ export default function AppContextProvider({ children }) {
     const [posts, setPosts] = useState([]);
     const [page, setPage] = useState(1);
     const [totalPages, setTotalPages] = useState(null);
+    const [darkMode, setDarkMode] = useState(false);
+
 
     //data filling
     async function fetchBlogPosts(page = 1) {
         setLoading(true);
         let url = `${baseUrl}?page=${page}`;
-        console.log('printing the final url');
-        console.log(url);
+        
         try {
             const result = await fetch(url);
             const data = await result.json();
-            console.log(data);
+            
             setPage(data.page);
             setPosts(data.posts);
             setTotalPages(data.totalPages);
@@ -37,6 +40,11 @@ export default function AppContextProvider({ children }) {
         fetchBlogPosts(page);
     }
 
+    function toggleDarkMode() {
+        setDarkMode(!darkMode);
+}
+
+
     const value = {
         posts,
         setPosts,
@@ -47,11 +55,15 @@ export default function AppContextProvider({ children }) {
         totalPages,
         setTotalPages,
         fetchBlogPosts,
-        handlePageChange
+        handlePageChange,
+        darkMode,
+        toggleDarkMode
     };
 
     //step2
     return <AppContext.Provider value={value}>
-        {children}
+        <div className={`app-container ${darkMode ? 'dark' : ''}`} >
+            {children}
+        </div>
     </AppContext.Provider>
 }
