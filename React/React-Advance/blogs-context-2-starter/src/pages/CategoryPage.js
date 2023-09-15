@@ -15,6 +15,7 @@ const CategoryPage = () => {
       
       <div>
         <button 
+          className=' bg-black text-white border-2 border-black mt-[80px]'
           onClick={() => navigation(-1)}>
           Back
         </button>
