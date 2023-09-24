@@ -6,11 +6,9 @@ import { IoMdNotifications } from "react-icons/io";
 import { RiVideoAddLine } from "react-icons/ri";
 import { useDispatch } from "react-redux";
 import { toggleMenu } from "../utils/appSlice";
-
-
+import { Link } from "react-router-dom";
 
 const Head = () => {
-
   const dispatch = useDispatch();
 
   const toggleMenuHandler = () => {
@@ -22,16 +20,18 @@ const Head = () => {
       <div className="flex  items-center col-span-1 gap-x-3">
         <GiHamburgerMenu
           className=" text-2xl w-10 h-10 p-2 bg-white rounded-full hover:bg-gray-300 transition duration-300 ease-in-out"
-        onClick={() => toggleMenuHandler()}
+          onClick={() => toggleMenuHandler()}
+        />
 
-        />
-        <img
-          className=" cursor-pointer"
-          src="https://images.indianexpress.com/2023/08/youtube-logo-featured.jpg"
-          alt="logo"
-          width={90}
-          height={20}
-        />
+        <Link to="/">
+          <img
+            className=" cursor-pointer"
+            src="https://images.indianexpress.com/2023/08/youtube-logo-featured.jpg"
+            alt="logo"
+            width={90}
+            height={20}
+          />
+        </Link>
       </div>
 
       <div className="flex justify-center items-center p-2 col-span-10 h-10 w-[70%]">

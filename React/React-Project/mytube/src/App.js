@@ -3,13 +3,21 @@ import Body from "./components/Body";
 import Head from "./components/Head";
 import store from "./utils/Store";
 import { Provider } from "react-redux";
+import MainContainer from "./components/MainContainer";
+import { Routes, Route } from "react-router-dom";
+import WatchPage from "./components/WatchPage";
 
 function App() {
   return (
     <Provider store={store}>
       <div className=" overflow-x-hidden">
         <Head />
-        <Body />
+        <Routes>
+          <Route path="/" element={<Body />}>
+            <Route index element={<MainContainer />} />
+            <Route path="watch" element={<WatchPage />} />
+          </Route>
+        </Routes>
         {/* 
         -Head
         -Body
