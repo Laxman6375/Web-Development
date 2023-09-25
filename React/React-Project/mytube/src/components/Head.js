@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineSearch } from "react-icons/ai";
 import { BiSolidUserCircle } from "react-icons/bi";
@@ -9,6 +9,13 @@ import { toggleMenu } from "../utils/appSlice";
 import { Link } from "react-router-dom";
 
 const Head = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+  console.log(searchQuery);
+
+  useEffect(() => {
+    
+  },[searchQuery])
+
   const dispatch = useDispatch();
 
   const toggleMenuHandler = () => {
@@ -37,6 +44,10 @@ const Head = () => {
       <div className="flex justify-center items-center p-2 col-span-10 h-10 w-[70%]">
         <input
           type="text"
+          value={searchQuery}
+          onChange={(e) => {
+            setSearchQuery(e.target.value);
+          }}
           className=" w-1/2 border p-1 border-gray-400 rounded-l-full"
         />
         <AiOutlineSearch className="cursor-pointer w-14 h-[33px] bg-[#f2f2f2] py-1  border border-gray-400 rounded-r-full" />
