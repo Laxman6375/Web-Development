@@ -13,6 +13,7 @@ const Head = () => {
   console.log(searchQuery);
 
   useEffect(() => {
+    //laxman
     
   },[searchQuery])
 
