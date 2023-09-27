@@ -21,7 +21,10 @@ const Button = ({ name }) => {
   return (
     <div className="flex flex-nowrap">
       {list.map((item) => (
-        <button key={item} className=" px-5 py-2 m-2 bg-gray-200 rounded-lg ">
+        <button
+          key={item}
+          className=" px-5 py-2 m-2 bg-gray-200 rounded-lg active:bg-gray-400"
+        >
           {item}
         </button>
       ))}
