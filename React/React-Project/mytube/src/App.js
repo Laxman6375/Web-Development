@@ -6,6 +6,7 @@ import { Provider } from "react-redux";
 import MainContainer from "./components/MainContainer";
 import { Routes, Route } from "react-router-dom";
 import WatchPage from "./components/WatchPage";
+import Demo from "./components/Demo";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Body />}>
             <Route index element={<MainContainer />} />
             <Route path="watch" element={<WatchPage />} />
+            <Route path="demo" element={<Demo />} />
           </Route>
         </Routes>
         {/* 
