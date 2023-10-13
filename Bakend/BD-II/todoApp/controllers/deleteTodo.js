@@ -2,6 +2,7 @@ const { now } = require("mongoose");
 const Todo = require("../models/todo");
 
 //define route handler
+//delete router
 
 exports.deleteTodo = async (req, res) => {
   try {
