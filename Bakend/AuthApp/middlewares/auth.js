@@ -6,8 +6,14 @@ exports.auth = (req, res, next) => {
   try {
     //extract jwt token
     //pending:othe ways to fetch token
-    const token = req.body.token;
-    if (!token) {
+    console.log("cookie", req.cookies.token);
+    console.log("body", req.body.token);
+    console.log('header', req.header("Authorization"));
+    const token =
+      req.cookies.token ||
+      req.body.token ||
+      req.header("Authorization").replace("Bearer ", "");
+    if (!token || token === undefined) {
       return res
         .status(401)
         .json({ success: false, message: "No token provided." });
@@ -15,10 +21,10 @@ exports.auth = (req, res, next) => {
 
     //verify the token
     try {
-      const decode = jwt.verify(token, process.env.JWT_SECRET);
-      console.log(decode);
+      const payload = jwt.verify(token, process.env.JWT_SECRET);
+      console.log(payload);
 
-      req.user = decode;
+      req.user = payload;
     } catch (error) {
       return res.status(401).json({
         success: false,
